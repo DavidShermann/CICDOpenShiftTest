@@ -17,7 +17,7 @@ def get_coords_by_name(name: str):
     A function that receives a name of a city/country and
     returns a list which includes: longitude,latitude,city name and country name
     :param name:
-    :return res_list:
+    :return res_list: 
     """
     real_country = ""
     real_city = ""
