@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang='en' xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8" />
+  <title>Weather Report</title>
+</head>
+<body style="background-image:
+ url(https://img.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg);
+background-size:1250px 600px;">
+<center>
+     <h1>Weather Report</h1>
+<form method="post" action="/weather">
+    <div class="content">
+        {% for message in get_flashed_messages() %}
+            <div class="alert">{{ message }}</div>
+        {% endfor %}
+        {% block content %} {% endblock %}
+    </div><br>
+      <label>Enter a valid city/country name</label><br><br>
+      <textarea name="text_box" style="resize: none;"></textarea><br><br>
+       <button type="submit">Submit</button>
+        <br><br><br><br>
+
+
+</form>
+    <form>
+<script>
+function FileSaver(){
+fetch('https://weatherbucketbond.s3.amazonaws.com/meme.jpg', {method: 'GET'})
+  .then(res => {
+    return res.blob();
+  })
+  .then(blob => {
+    var url = window.URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'meme.jpg';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(
+      _ => { window.URL.revokeObjectURL(url); },
+      60000);
+    a.remove();
+  })
+  .catch(err => {
+    console.error('err: ', err);
+  })
+  }
+
+</script>
+
+
+
+<button onClick="FileSaver()">download</button>
+
+
+</form>
+</center>
+</body>
+
+</html>
