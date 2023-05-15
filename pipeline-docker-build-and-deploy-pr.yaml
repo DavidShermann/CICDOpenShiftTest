@@ -44,7 +44,6 @@ spec:
           value: $(params.IMAGE_NAME)
         - name: TLSVERIFY
           value: "false"
-
     - name: deploy
       taskRef:
         name: openshift-client

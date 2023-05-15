@@ -139,15 +139,15 @@ def get_weather_data(cord1, cord2,cityname) -> list:
 def landing_page():
     return render_template('landing_page.html')
 
-@app.route('/history')
-def history():
-    blue = os.environ.get('BG_COLOR')
-    filenames = []
-    for filename in os.listdir('history'):
-        if filename.endswith('.json'):
-            filenames.append(filename)
-    print(filenames)
-    return render_template('history.html', filenames=filenames,bg=blue)
+# @app.route('/history')
+# def history():
+#     blue = os.environ.get('BG_COLOR')
+#     filenames = []
+#     for filename in os.listdir('history'):
+#         if filename.endswith('.json'):
+#             filenames.append(filename)
+#     print(filenames)
+#     return render_template('history.html', filenames=filenames,bg=blue)
 
 @app.route('/download/<path:filename>')
 def download_file(filename):

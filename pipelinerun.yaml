@@ -11,7 +11,7 @@ spec:
   - name: git-url
     value: https://github.com/DavidShermann/CICDOpenShiftTest.git
   - name: IMAGE
-    value: doovid1000/weather-app
+    value: doovid1000/weather_app
   workspaces: 
   - name: shared-workspace
     volumeClaimTemplate:
