@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, flash, redirect, url_for,send
 import requests
 from countryinfo import CountryInfo
 from geopy.geocoders import Nominatim
-import json
+# import json
 import os
 
 
@@ -118,10 +118,10 @@ def get_weather_data(cord1, cord2,cityname) -> list:
                 "Humidity_At_Day": humid_day_avg[i],
                 "Humidity_At_Night": humid_night_avg[i]
         }
-        jsonString = json.dumps(dictjson)
-        jsonFile=open(os.path.join("history",f'{datetime.date.today()}_{cityname}.json'),'a')
-        jsonFile.write(jsonString)
-        jsonFile.close()
+        # jsonString = json.dumps(dictjson)
+        # jsonFile=open(os.path.join("history",f'{datetime.date.today()}_{cityname}.json'),'a')
+        # jsonFile.write(jsonString)
+        # jsonFile.close()
         # upload to dynamodb
         # response = table.put_item(
         #     Item={
